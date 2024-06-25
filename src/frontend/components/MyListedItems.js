@@ -61,7 +61,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
   }
   useEffect(() => {
     loadListedItems()
-  })
+  }, [marketplace, nft, account ])
   if (loading) return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Loading...</h2>
