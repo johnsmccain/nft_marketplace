@@ -43,7 +43,7 @@ const Home = ({ marketplace, nft }) => {
 
   useEffect(() => {
     loadMarketplaceItems()
-}, [marketplace, nft])
+}, [marketplace, nft, loadMarketplaceItems])
   if (loading) return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Loading...</h2>
