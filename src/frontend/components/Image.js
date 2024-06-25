@@ -29,8 +29,7 @@ const Image = ({cid}) => {
 
     useEffect(() => {
         fetchImage();
-
-    },[cid, fetchImage])
+    })
   return (
     <>
         {error && <p>Error: {error}</p>}
