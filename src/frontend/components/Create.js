@@ -15,7 +15,7 @@ const Create = ({ marketplace, nft }) => {
     if (file) {
       try {
         const fileRes = await uploadFileToPinata(file);
-        setImage(`https://gateway.pinata.cloud/ipfs/${fileRes.IpfsHash}`);
+        setImage(`https://jade-just-rhinoceros-52.mypinata.cloud/ipfs/${fileRes.IpfsHash}`);
       } catch (error) {
         console.error("IPFS image upload error: ", error);
       }
@@ -35,7 +35,7 @@ const Create = ({ marketplace, nft }) => {
   };
  const mintThenList = async (ipfsHash) => {
 
-    const uri = `https://gateway.pinata.cloud/ipfs/${ipfsHash}`;
+    const uri = `https://jade-just-rhinoceros-52.mypinata.cloud/ipfs/${ipfsHash}`;
 
     console.log("unique URI",uri)
     // mint nft

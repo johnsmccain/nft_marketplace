@@ -76,7 +76,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
             {listedItems.map((item, idx) => (
               <Col key={idx} className="overflow-hidden">
                 <Card>
-                  <Card.Img variant="top" src={item.image} />
+                  <Card.Img variant="top" src={item.image} crossOrigin='anonymous'/>
                   <Card.Footer>{ethers.utils.formatEther(item.totalPrice)} ETH</Card.Footer>
                 </Card>
               </Col>

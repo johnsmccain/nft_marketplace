@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ethers } from "ethers"
 import { Row, Col, Card, Button } from 'react-bootstrap'
-import Image from './Image'
 
 const Home = ({ marketplace, nft }) => {
   const [loading, setLoading] = useState(true)
@@ -43,13 +42,13 @@ const Home = ({ marketplace, nft }) => {
 
   useEffect(() => {
     loadMarketplaceItems()
-})
+  })
   if (loading) return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Loading...</h2>
     </main>
   )
-  // console.log(`jade-just-rhinoceros-52.mypinata.cloud/ipfs/${items[0]?.image?.split("/")[4]}`)
+  console.log(items)
   return (
     <div className="flex justify-center">
       {items.length > 0 ?
@@ -58,8 +57,7 @@ const Home = ({ marketplace, nft }) => {
             {items.map((item, idx) => (
               <Col key={idx} className="overflow-hidden">
                 <Card>
-                  {/* <Card.Img variant="top" src={`https://jade-just-rhinoceros-52.mypinata.cloud/ipfs/${item?.image?.split("/")[4]}`}  loading='lazy'/> */}
-                  {item.image && <Image cid={item.image.split("/")[4]}/>}
+                  <Card.Img variant="top" src={item.image}  crossOrigin='anonymous'/>
                   <Card.Body color="secondary">
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>
