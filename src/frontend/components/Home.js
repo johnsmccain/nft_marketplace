@@ -43,7 +43,7 @@ const Home = ({ marketplace, nft }) => {
 
   useEffect(() => {
     loadMarketplaceItems()
-  })
+  },[])
   if (loading) return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Loading...</h2>
@@ -58,7 +58,7 @@ const Home = ({ marketplace, nft }) => {
             {items.map((item, idx) => (
               <Col key={idx} className="overflow-hidden">
                 <Card>
-                  <Card.Img variant="top" src={item.image}  />
+                  {/* <Card.Img variant="top" src={item.image}  /> */}
                   <Image url={item.image}/>
                   <Card.Body color="secondary">
                     <Card.Title>{item.name}</Card.Title>

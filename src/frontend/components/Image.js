@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
-import axios from 'axios';
 
 const Image = ({url}) => {
     const [imageUri, setImageUri] = useState();
@@ -10,14 +9,11 @@ const Image = ({url}) => {
 
         try {
 
-            let response = await axios.get(url);
+            let response = await fetch(url);
             if (!response.ok) throw new Error("Network response was not OK!");
 
-            console.log(response)
             const blob = await response.blob();
-            console.log(blob)
             const objectURI = URL.createObjectURL(blob);
-            console.log(objectURI)
             setImageUri(objectURI);
         } catch (error) {
             setError(error.message);
@@ -27,7 +23,7 @@ const Image = ({url}) => {
 
     useEffect(() => {
         fetchImage();
-    })
+    },[])
   return (
     <>
         {error && <p>Error: {error}</p>}
