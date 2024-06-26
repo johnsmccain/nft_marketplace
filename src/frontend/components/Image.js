@@ -23,7 +23,7 @@ const Image = ({url}) => {
 
     useEffect(() => {
         fetchImage();
-    },[])
+    }, [url]);
   return (
     <>
         {error && <p>Error: {error}</p>}
